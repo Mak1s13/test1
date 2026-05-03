@@ -1,0 +1,47 @@
+(kicad_sch (version 20230121)
+  (uuid "12345678-1234-1234-1234-123456789012")
+  (paper "A4")
+  (title_block
+    (title "ESP32-S3 microSD SPI Interface")
+    (date 2026-05-03)
+    (rev "1.0")
+    (comment 1 "Complete schematic for microSD card in SPI mode")
+    (comment 2 "with proper decoupling and pull-up resistors"))
+  (layers
+    (0 "F.Cu")
+    (31 "B.Cu"))
+  (lib_symbols
+    (symbol "Device:R"
+      (pin_numbers hide)
+      (pin_names (offset 0.254))
+      (property "Reference" "R" (at 2.032 0 90)
+        (effects (font (size 1.27 1.27) (thickness 0.15))))
+      (property "Value" "R" (at 0 0 90)
+        (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    (symbol "Device:C"
+      (pin_numbers hide)
+      (pin_names (offset 0.254))
+      (property "Reference" "C" (at 0.635 2.54 0)
+        (effects (font (size 1.27 1.27) (thickness 0.15))))
+      (property "Value" "C" (at 0.635 -2.54 0)
+        (effects (font (size 1.27 1.27) (thickness 0.15)))))
+    (symbol "Connector:Micro_SD_Card"
+      (pin_numbers hide)
+      (pin_names (offset 1.016))
+      (property "Reference" "J" (at 0 5.08 0)
+        (effects (font (size 1.27 1.27) (thickness 0.15))))
+      (property "Value" "Micro_SD_Card" (at 0 -5.08 0)
+        (effects (font (size 1.27 1.27) (thickness 0.15))))))
+  (wire (pts (xy 100 100) (xy 150 100))
+    (stroke (width 0) (type default)) (uuid "00000000-0000-0000-0000-000000000001"))
+  (wire (pts (xy 100 110) (xy 150 110))
+    (stroke (width 0) (type default)) (uuid "00000000-0000-0000-0000-000000000002"))
+  (wire (pts (xy 100 120) (xy 150 120))
+    (stroke (width 0) (type default)) (uuid "00000000-0000-0000-0000-000000000003"))
+  (wire (pts (xy 100 130) (xy 150 130))
+    (stroke (width 0) (type default)) (uuid "00000000-0000-0000-0000-000000000004"))
+  (text "ESP32-S3 GPIO Connections:\n\nGPIO18 = SD_CLK\nGPIO23 = SD_MOSI\nGPIO19 = SD_MISO\nGPIO5 = SD_CS\n\nDecoupling:\nC1 = 100nF (close to socket)\nC2 = 10uF (bulk)\n\nPull-ups (47k):\nR1 = SD_CS\nR2 = SD_MOSI\nR3 = SD_MISO"
+    (at 50 50 0)
+    (effects (font (size 1.27 1.27) (thickness 0.15)) (justify left bottom))))
+  (sheet_instances
+    (path "/" (page "1"))))

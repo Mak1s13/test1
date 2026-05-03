@@ -1,0 +1,63 @@
+ESP32-S3 MICROSD CARD SPI SCHEMATIC DIAGRAM
+=============================================
+
+                    +3V3
+                     |
+          +----------+----------+
+          |          |          |
+        [C2]       [C1]      [R1]
+        10µF      100nF      47k
+          |          |          |
+         GND        GND      SD_CS -----> J1 pin 2 (DAT3/CS)
+                              |
+                         ESP32 GPIO5
+
+                    +3V3
+                     |
+                   [R2]
+                   47k
+                     |
+                 SD_MOSI -----> J1 pin 3 (CMD)
+                     |
+                 ESP32 GPIO23
+
+                    +3V3
+                     |
+                   [R3]
+                   47k
+                     |
+                 SD_MISO -----> J1 pin 7 (DAT0)
+                     |
+                 ESP32 GPIO19
+
+ESP32 GPIO18 ----------- SD_CLK -----> J1 pin 5 (CLK)
+
++3V3 ---------------------------------> J1 pin 4 (VDD)
+GND ---------------------------------> J1 pin 6 (VSS)
+GND ---------------------------------> J1 SHIELD
+
+J1 pin 1 (DAT2) ---------> NC (Not Connected)
+J1 pin 8 (DAT1) ---------> NC (Not Connected)
+
+
+PART LIST
+=========
+U1: ESP32-S3-WROOM-2
+J1: Micro SD Card Socket (SPI mode)
+C1: 100nF Capacitor (0603 or 0805)
+C2: 10µF Capacitor (0603 or 0805)
+R1: 47kΩ Resistor (0603 or 0805)
+R2: 47kΩ Resistor (0603 or 0805)
+R3: 47kΩ Resistor (0603 or 0805)
+
+
+DESIGN RULES
+============
+1. Place C1 (100nF) within 5mm of microSD socket VDD pin
+2. Place C2 (10µF) within 10mm of microSD socket VDD pin
+3. Place pull-up resistors (R1/R2/R3) close to ESP32 GPIO pins
+4. Use short, direct traces for SPI signals
+5. For traces > 5cm, add 22Ω series resistors near MCU
+6. Maintain 0.3mm minimum trace width for power
+7. Use ground plane for better signal integrity
+8. Keep shield pin connected to GND (copper plane if possible)

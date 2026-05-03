@@ -1,0 +1,63 @@
+(kicad_project
+  (version 20230121)
+  (generator eeschema)
+  (generator_version 7.0)
+  (on_sch_change ask)
+  (allow_sch_edit_version_older 20221205)
+  (libs
+    (rescache
+      (symbol "Device:R"
+        (pin_numbers hide)
+        (pin_names (offset 0.254))
+        (property "Reference" "R"
+          (at 2.032 0 90)
+          (effects
+            (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Value" "R"
+          (at 0 0 90)
+          (effects
+            (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Footprint" ""
+          (at -1.778 0 90)
+          (effects
+            (font (size 1.27 1.27) (thickness 0.15))
+            hide)))
+      (symbol "Device:C"
+        (pin_numbers hide)
+        (pin_names (offset 0.254))
+        (property "Reference" "C"
+          (at 0.635 2.54 0)
+          (effects
+            (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Value" "C"
+          (at 0.635 -2.54 0)
+          (effects
+            (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Footprint" ""
+          (at 0.9652 -3.81 0)
+          (effects
+            (font (size 1.27 1.27) (thickness 0.15))
+            hide)))
+      (symbol "Connector:Micro_SD_Card"
+        (pin_numbers hide)
+        (pin_names (offset 1.016))
+        (property "Reference" "J"
+          (at 0 5.08 0)
+          (effects
+            (font (size 1.27 1.27) (thickness 0.15))))
+        (property "Value" "Micro_SD_Card"
+          (at 0 -5.08 0)
+          (effects
+            (font (size 1.27 1.27) (thickness 0.15)))))
+    )
+  )
+  (schematic
+    (uuid "12345678-1234-1234-1234-123456789012")
+    (paper "A4")
+    (title_block
+      (title "ESP32-S3 microSD SPI Interface")
+      (date 2026-05-03)
+      (rev "1.0")
+      (company "")
+      (comment 1 "Complete schematic for microSD card in SPI mode")
+      (comment 2 "with proper decoupling and pull-up resistors"))))
